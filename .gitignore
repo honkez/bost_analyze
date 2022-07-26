@@ -1,0 +1,4 @@
+# Choose files that are not going to be version handled
+scraperBAK.py
+scrape_booli_2022-07-10.csv
+scrape_booli_2022-07-11.csv
