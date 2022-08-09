@@ -65,9 +65,12 @@ def make_del_soup(salda_hus,list_ite):
             b_pr_m2=diva[2].p.text
             b_sale_date='-'
             b_split_rslt=bst_div.text # use reqx to pars out the conents until % sign
+            b_sale_ort='-'
             res_bost_deal=re_search(b_split_rslt,'smutt')
+
             try:
                 b_sale_date=diva[2].find_all('p')[1].text
+                b_sale_ort=diva[1].contents[2].text
             except:
                 continue
 
@@ -79,7 +82,8 @@ def make_del_soup(salda_hus,list_ite):
                             'b_price':b_price,
                             'b_pr_m2':b_pr_m2,
                             'b_sale_rslt':res_bost_deal, # TODO Denna är inte testad , kommer inte att funka ännu, fel här!!!
-                            'b_sale_date':b_sale_date           
+                            'b_sale_date':b_sale_date,
+                            'sale_ort':b_sale_ort           
             })
 
         except:
@@ -88,9 +92,9 @@ def make_del_soup(salda_hus,list_ite):
    
 if __name__ == '__main__':
     #Define Url
-    urlen='https://www.booli.se/slutpriser/skovde/401?objectType=Villa&minSoldDate=2017-01-09&maxSoldDate=2022-07-20&sort=soldDate'
+    urlen='https://www.booli.se/slutpriser/skovde/401?objectType=Villa&minSoldDate=2017-01-09&maxSoldDate=2022-08-08&sort=soldDate'
     sida_nr=1
-    ant_sidor=5
+    ant_sidor=6
 
     l_items=[]
     lig=[]
