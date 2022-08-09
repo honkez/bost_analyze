@@ -115,6 +115,8 @@ if __name__ == '__main__':
     #make dataframe with:
 df_df = pd.DataFrame(lig)
 print(df_df.head(8))
+print('-------------------------------------------------------------------------------------')
+print('Number of posts collected from Booli :{}'.format(df_df.shape[0]))
 filnamn="scrape_booli_" + str(nu_tid) +".csv"
 df_df.to_csv(filnamn)
 
